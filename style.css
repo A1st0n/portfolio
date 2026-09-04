@@ -4,6 +4,8 @@
   --muted: #a99fd8;
   --accent: #38d9f0;
   --rule: #3b2d80;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --mono: "DM Mono", ui-monospace, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -12,7 +14,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+  font: 300 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
 }
 
 a { color: var(--accent); }
@@ -31,8 +34,9 @@ nav {
   border-bottom: 1px solid var(--rule);
 }
 nav .brand {
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 1.05rem;
   color: var(--text);
   text-decoration: none;
 }
@@ -62,10 +66,12 @@ header {
 h1 {
   margin: 0 0 1rem;
   font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 .lede { font-size: 1.15rem; color: var(--muted); }
-.lede strong { color: var(--text); }
+.lede strong { color: var(--text); font-weight: 500; }
 
 .robot {
   flex: 1 1 340px;
@@ -91,14 +97,21 @@ main {
 section { padding: 2.5rem 0; border-top: 1px solid var(--rule); }
 h2 {
   margin: 0 0 1.2rem;
-  font-size: 1.6rem;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
 }
 
 /* tech list */
 dl { margin: 0; }
 dt {
   margin-top: 1rem;
-  font-weight: 700;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--accent);
 }
 dd { margin: 0.2rem 0 0; color: var(--muted); }
@@ -109,7 +122,12 @@ dd { margin: 0.2rem 0 0; color: var(--muted); }
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
-.grid h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+.grid h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 1rem;
+}
 .grid p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
 footer {
